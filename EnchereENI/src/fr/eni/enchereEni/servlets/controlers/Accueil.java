@@ -12,24 +12,24 @@ import javax.servlet.http.HttpServletResponse;
 import fr.eni.enchereEni.bll.EnchereManager;
 import fr.eni.enchereEni.bo.Enchere;
 
-
 @WebServlet("/acceuil")
 public class Accueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       // renom
-  
+	// renom
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		EnchereManager enchereManager = new EnchereManager();
 		List<Enchere> encheres = enchereManager.findAll();
 		request.setAttribute("encheres", encheres);
-		request.getServletContext().getRequestDispatcher("/acceuil").forward(request, response);
-		
-	
+		request.getServletContext().getRequestDispatcher("/Accueil.jsp").forward(request, response);
+
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getServletContext().getRequestDispatcher("/Accueil.jsp").forward(request, response);
+
 	}
 
 }
